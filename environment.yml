@@ -1,0 +1,15 @@
+# Copyright © <2023> Idiap Research Institute <contact@idiap.ch>
+#
+# SPDX-FileContributor: Florian MAI <florian.ren.mai@googlemail.com>
+# SPDX-FileContributor: Arnaud Pannatier <arnaud.pannatier@idiap.ch>
+# SPDX-FileContributor: Fabio Fehr <fabio.fehr@idiap.ch>
+# SPDX-FileContributor: Juan Pablo Zuluaga <juan-pablo.zuluaga@idiap.ch>
+#
+# SPDX-License-Identifier: MIT
+name: hypermixing
+dependencies:
+  - python=3.10
+  - pytorch::pytorch=2.0 # BSD-3-Clause, https://pytorch.org/
+  - pytorch::pytorch-cuda=11.7 # EULA, https://docs.nvidia.com/cuda/eula/index.html
+  - pytorch::torchvision # BSD-3-Clause, https://pytorch.org/vision
+  - nvidia::cuda=11.7 # EULA, https://docs.nvidia.com/cuda/eula/index.html

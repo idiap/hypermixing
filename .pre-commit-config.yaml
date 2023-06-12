@@ -1,0 +1,53 @@
+# Copyright © <2023> Idiap Research Institute <contact@idiap.ch>
+#
+# SPDX-FileContributor: Florian MAI <florian.ren.mai@googlemail.com>
+# SPDX-FileContributor: Arnaud Pannatier <arnaud.pannatier@idiap.ch>
+# SPDX-FileContributor: Fabio Fehr <fabio.fehr@idiap.ch>
+# SPDX-FileContributor: Juan Pablo Zuluaga <juan-pablo.zuluaga@idiap.ch>
+#
+# SPDX-License-Identifier: MIT
+fail_fast: true
+
+repos:
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        args: [--config=.flake8]
+        additional_dependencies:
+          - flake8-docstrings>=1.6.0
+          - flake8-bugbear>=21.4.3
+          - flake8-comprehensions>=3.6.1
+          - flake8-logging-format>=0.6.0
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+  - repo: https://github.com/PyCQA/pydocstyle
+    rev: 6.3.0
+    hooks:
+      - id: pydocstyle
+        args:
+        - --match='(?!.*grpc\.py$).*\.py$'
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: debug-statements
+      - id: check-docstring-first
+      - id: check-case-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v1.1.2
+    hooks:
+    - id: reuse
